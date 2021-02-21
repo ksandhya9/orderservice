@@ -26,8 +26,8 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="1e617a4a-589f-4c46-8a35-3f3fe6cf4a0e">
-        <schema name="pg_catalog" object-types="function, view, constraint, table" />
-        <schema name="public" object-types="function, sequence, view, constraint, table" />
+        <schema name="pg_catalog" object-types="function, view, table" />
+        <schema name="public" object-types="function, view, table" />
       </connection>
     </loaded-nodes>
   </component>
@@ -143,7 +143,10 @@ CREATE TABLE IF NOT EXISTS billings(
 	 CONSTRAINT fk_payment
       FOREIGN KEY(payment_id) 
 	  REFERENCES payments(payment_id)
-);]]></console>
+);
+
+
+select * from orders;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
