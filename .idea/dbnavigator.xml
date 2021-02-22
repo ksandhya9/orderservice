@@ -26,6 +26,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="1e617a4a-589f-4c46-8a35-3f3fe6cf4a0e">
+        <schema name="information_schema" object-types="function, view, table" />
         <schema name="pg_catalog" object-types="function, view, table" />
         <schema name="public" object-types="function, view, table" />
       </connection>
@@ -33,7 +34,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1e617a4a-589f-4c46-8a35-3f3fe6cf4a0e">
-      <console name="ecommerceConnection" type="STANDARD" schema="information_schema" session="Main"><![CDATA[#ITEM
+      <console name="ecommerceConnection" type="STANDARD" schema="public" session="Main"><![CDATA[#ITEM
 item_name
 item_qty
 item_subtotal
@@ -75,7 +76,14 @@ order_billing_addressline2
 order_billing_city 
 order_billing_state 
 order_billing_zip
-payment_id]]></console>
+payment_id
+
+select * from  orders;
+
+insert into orders values(1,1,'active',10,10,10,30,'2020-01-01','2020-01-01');
+
+select * from  items;
+insert into items values(1,1,'wings of fire',1,10,'2020-01-01');]]></console>
       <console name="ecommerceConnection 1" type="STANDARD" schema="public" session="Main"><![CDATA[DROP TABLE IF EXISTS items;
 DROP TABLE IF EXISTS shipping;
 DROP TABLE IF EXISTS billings;
@@ -143,10 +151,7 @@ CREATE TABLE IF NOT EXISTS billings(
 	 CONSTRAINT fk_payment
       FOREIGN KEY(payment_id) 
 	  REFERENCES payments(payment_id)
-);
-
-
-select * from items;]]></console>
+);]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
